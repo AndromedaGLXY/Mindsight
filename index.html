@@ -9,47 +9,65 @@
 </head>
 <body>
   <div id="app">
+
     <!-- Main Menu -->
-    <div id="menu" class="screen">
+    <div id="menu">
       <h1>MindSight: Colours</h1>
-      <button onclick="showScreen('setup')">Setup Game</button>
-      <button onclick="startGame()">Play Game</button>
+      <button onclick="showGame()">Play Game</button>
+      <button onclick="showSetup()">Setup Game</button>
       <button onclick="showStats()">Statistics</button>
     </div>
 
     <!-- Setup Screen -->
-    <div id="setup" class="screen hidden">
-      <h2>Choose 2 Colours</h2>
-      <div id="color-list"></div>
-      <button onclick="confirmSetup()">Confirm</button>
-      <button onclick="showScreen('menu')">Back</button>
+    <div id="setup" style="display:none;">
+      <h2>Setup Game</h2>
+      <p>Choose 2 colours:</p>
+      <select id="color1">
+        <option>red</option>
+        <option>green</option>
+        <option>blue</option>
+        <option>yellow</option>
+        <option>orange</option>
+        <option>purple</option>
+        <option>pink</option>
+        <option>black</option>
+        <option>white</option>
+        <option>grey</option>
+      </select>
+      <select id="color2">
+        <option>green</option>
+        <option>red</option>
+        <option>blue</option>
+        <option>yellow</option>
+        <option>orange</option>
+        <option>purple</option>
+        <option>pink</option>
+        <option>black</option>
+        <option>white</option>
+        <option>grey</option>
+      </select>
+      <br><br>
+      <button onclick="startGame()">Start Game</button>
+      <button onclick="showMenu()">Back to Menu</button>
+    </div>
+
+    <!-- Statistics -->
+    <div id="stats" style="display:none;">
+      <h2>Statistics</h2>
+      <p id="statsContent">No games played yet.</p>
+      <button onclick="showMenu()">Back to Menu</button>
     </div>
 
     <!-- Game Screen -->
-    <div id="game" class="screen hidden">
-      <div class="sides">
-        <span id="left-label"></span>
-        <span id="right-label"></span>
+    <div id="game" style="display:none; flex:1; flex-direction:column;">
+      <div id="labels">
+        <span id="leftLabel"></span>
+        <span id="rightLabel"></span>
       </div>
-      <div id="card" class="card">?</div>
-      <p id="feedback"></p>
-      <button onclick="endGame()">End Game</button>
+      <div id="colorCard"></div>
+      <button onclick="showMenu()" style="position:absolute; bottom:10px; left:10px;">Menu</button>
     </div>
 
-<div id="game" style="display:none; flex:1; flex-direction:column;">
-  <div id="labels">
-    <span id="leftLabel"></span>
-    <span id="rightLabel"></span>
-  </div>
-  <div id="colorCard"></div>
-</div>
-    
-    <!-- Stats Screen -->
-    <div id="stats" class="screen hidden">
-      <h2>Statistics</h2>
-      <p id="stats-content"></p>
-      <button onclick="showScreen('menu')">Back</button>
-    </div>
   </div>
 
   <script src="script.js"></script>
