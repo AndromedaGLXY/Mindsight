@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindSight: Colours</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="app">
+    <!-- Main Menu -->
+    <div id="menu" class="screen">
+      <h1>MindSight: Colours</h1>
+      <button onclick="showScreen('setup')">Setup Game</button>
+      <button onclick="startGame()">Play Game</button>
+      <button onclick="showStats()">Statistics</button>
+    </div>
+
+    <!-- Setup Screen -->
+    <div id="setup" class="screen hidden">
+      <h2>Choose 2 Colours</h2>
+      <div id="color-list"></div>
+      <button onclick="confirmSetup()">Confirm</button>
+      <button onclick="showScreen('menu')">Back</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game" class="screen hidden">
+      <div class="sides">
+        <span id="left-label"></span>
+        <span id="right-label"></span>
+      </div>
+      <div id="card" class="card">?</div>
+      <p id="feedback"></p>
+      <button onclick="endGame()">End Game</button>
+    </div>
+
+    <!-- Stats Screen -->
+    <div id="stats" class="screen hidden">
+      <h2>Statistics</h2>
+      <p id="stats-content"></p>
+      <button onclick="showScreen('menu')">Back</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
