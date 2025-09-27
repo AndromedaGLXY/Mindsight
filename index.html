@@ -13,49 +13,35 @@
     <!-- Main Menu -->
     <div id="menu">
       <h1>MindSight: Colours</h1>
-      <button onclick="showGame()">Play Game</button>
-      <button onclick="showSetup()">Setup Game</button>
-      <button onclick="showStats()">Statistics</button>
+      <button id="btnPlay">Play Game</button>
+      <button id="btnSetup">Setup Game</button>
+      <button id="btnStats">Statistics</button>
     </div>
 
     <!-- Setup Screen -->
     <div id="setup" style="display:none;">
       <h2>Setup Game</h2>
-      <p>Choose 2 colours:</p>
+      <p>Select 2 colours:</p>
       <select id="color1">
-        <option>red</option>
-        <option>green</option>
-        <option>blue</option>
-        <option>yellow</option>
-        <option>orange</option>
-        <option>purple</option>
-        <option>pink</option>
-        <option>black</option>
-        <option>white</option>
-        <option>grey</option>
+        <option>red</option><option>green</option><option>blue</option><option>yellow</option>
+        <option>orange</option><option>purple</option><option>pink</option><option>black</option>
+        <option>white</option><option>grey</option>
       </select>
       <select id="color2">
-        <option>green</option>
-        <option>red</option>
-        <option>blue</option>
-        <option>yellow</option>
-        <option>orange</option>
-        <option>purple</option>
-        <option>pink</option>
-        <option>black</option>
-        <option>white</option>
-        <option>grey</option>
+        <option>green</option><option>red</option><option>blue</option><option>yellow</option>
+        <option>orange</option><option>purple</option><option>pink</option><option>black</option>
+        <option>white</option><option>grey</option>
       </select>
       <br><br>
-      <button onclick="startGame()">Start Game</button>
-      <button onclick="showMenu()">Back to Menu</button>
+      <button id="btnConfirm">Confirm Setup</button>
+      <button id="btnBackMenu1">Back to Menu</button>
     </div>
 
-    <!-- Statistics -->
+    <!-- Statistics Screen -->
     <div id="stats" style="display:none;">
       <h2>Statistics</h2>
-      <p id="statsContent">No games played yet.</p>
-      <button onclick="showMenu()">Back to Menu</button>
+      <pre id="statsContent"></pre>
+      <button id="btnBackMenu2">Back to Menu</button>
     </div>
 
     <!-- Game Screen -->
@@ -65,7 +51,7 @@
         <span id="rightLabel"></span>
       </div>
       <div id="colorCard"></div>
-      <button onclick="showMenu()" style="position:absolute; bottom:10px; left:10px;">Menu</button>
+      <button id="btnEndGame" style="position:absolute; bottom:10px; left:10px;">Menu</button>
     </div>
 
   </div>
