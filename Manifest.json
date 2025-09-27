@@ -1,0 +1,9 @@
+{
+  "name": "MindSight: Colours",
+  "short_name": "MindSight",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f2f2f2",
+  "theme_color": "#000000",
+  "icons": []
+}
