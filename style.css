@@ -1,47 +1,46 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset and base */
+body, html {
   margin: 0;
-  text-align: center;
-  background: #f2f2f2;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  overflow: hidden;
 }
 
-h1, h2 {
-  margin-top: 20px;
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
-button {
-  display: block;
-  margin: 10px auto;
-  padding: 12px 20px;
-  font-size: 16px;
+/* Game area full screen */
+#game {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.hidden {
-  display: none;
+#colorCard {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
 }
 
-.screen {
-  padding: 20px;
-}
-
-.sides {
+/* Labels at the top */
+#labels {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: bold;
-}
-
-.card {
-  width: 200px;
-  height: 200px;
-  margin: 50px auto;
-  background: grey;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: white;
-  user-select: none;
+  color: #333;
+  z-index: 2;
 }
