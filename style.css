@@ -1,30 +1,8 @@
-
-:root{--gap:12px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;background:#f2f2f2;overflow:hidden}
-.screen{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px}
-.hidden{display:none}
-button{padding:12px 18px;margin:8px;font-size:16px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:white}
-.controls{margin-top:10px}
-
-/* Play area */
-#playArea{position:relative;width:100%;height:75vh;max-height:860px;display:block;border-radius:12px;overflow:hidden;background:transparent}
-#colorCard{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;border-radius:8px;pointer-events:none;transition:opacity 0.18s}
-#divider{position:absolute;top:0;bottom:0;left:50%;width:4px;background:black;z-index:20}
-
-/* The visible, interactive halves (on top of the card) */
-.side{position:absolute;top:0;bottom:0;width:50%;z-index:30;pointer-events:auto;opacity:0;transition:background 0.12s, opacity 0.12s}
-#leftSide{left:0}
-#rightSide{right:0}
-
-/* Flash classes */
-.side.flash-left{background:rgba(255,0,0,0.24);opacity:1}
-.side.flash-right{background:rgba(0,128,0,0.24);opacity:1}
-
-/* Labels & live stats */
-#labels{position:absolute;top:8px;left:12px;right:12px;display:flex;justify-content:space-between;z-index:40;font-weight:700;pointer-events:none}
-#liveStats{position:fixed;left:0;right:0;bottom:0;padding:10px 14px;background:rgba(255,255,255,0.95);border-top:1px solid rgba(0,0,0,0.06);text-align:center;font-weight:700;z-index:50}
-
-/* History list */
-.history-list{width:100%;max-width:720px;max-height:60vh;overflow:auto;background:#fff;padding:12px;border-radius:8px;text-align:left}
-.history-item{padding:8px 6px;border-bottom:1px solid #eee}
+body { font-family: Arial, sans-serif; margin:0; padding:0; }
+.hidden { display:none; }
+#gameArea { position:relative; width:100%; height:80vh; }
+#colorCard { width:100%; height:100%; pointer-events:none; }
+#divider { position:absolute; top:0; bottom:0; left:50%; width:2px; background:black; }
+#leftSide, #rightSide { position:absolute; top:0; bottom:0; width:50%; height:100%; }
+#leftSide { left:0; background-color:rgba(255,0,0,0); }
+#rightSide { right:0; background-color:rgba(0,255,0,0); }
