@@ -1,11 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>MindSight: Colours</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>MindSight: Colours</title>
+
+<!-- PWA + iOS support -->
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="menu" class="screen">
@@ -32,11 +39,11 @@
       <span id="rightLabel"></span>
     </div>
 
-    <div id="playArea">
-      <div id="colorCard"></div>
-      <div id="divider"></div>
-      <div id="leftSide" class="side"></div>
-      <div id="rightSide" class="side"></div>
+    <div id="playArea" role="application" aria-label="Colour play area">
+      <div id="colorCard" aria-hidden="true"></div>
+      <div id="divider" aria-hidden="true"></div>
+      <div id="leftSide" class="side" aria-label="Left choice" role="button" tabindex="0"></div>
+      <div id="rightSide" class="side" aria-label="Right choice" role="button" tabindex="0"></div>
     </div>
 
     <div id="liveStats">Correct: <span id="liveCorrect">0</span> | Wrong: <span id="liveWrong">0</span></div>
@@ -57,11 +64,12 @@
 
 <script src="script.js"></script>
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(() => console.log('Service Worker registered'))
-      .catch(err => console.error('SW registration failed:', err));
-  }
+// register service worker (relative registration so it works on GitHub Pages repo)
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js', { scope: './' })
+    .then(() => console.log('Service Worker registered'))
+    .catch(err => console.warn('SW registration failed:', err));
+}
 </script>
 </body>
 </html>
