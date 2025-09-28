@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>MindSight: Colours</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div id="menu">
+  <div id="menu" class="screen">
     <h1>MindSight: Colours</h1>
     <button id="btnPlay">Play Game</button>
     <button id="btnSetup">Setup Game</button>
     <button id="btnStats">Statistics</button>
   </div>
 
-  <div id="setup" style="display:none;">
+  <div id="setup" class="screen hidden">
     <h2>Setup Game</h2>
-    <p>Select 2 colours:</p>
-    <select id="color1">
-      <option>red</option><option>green</option><option>blue</option><option>yellow</option>
-      <option>orange</option><option>purple</option><option>pink</option><option>black</option>
-      <option>white</option><option>grey</option>
-    </select>
-    <select id="color2">
-      <option>green</option><option>red</option><option>blue</option><option>yellow</option>
-      <option>orange</option><option>purple</option><option>pink</option><option>black</option>
-      <option>white</option><option>grey</option>
-    </select>
-    <br><br>
-    <button id="btnConfirm">Confirm Setup</button>
-    <button id="btnBackMenu1">Back to Menu</button>
+    <p>Select 2 colours (left / right):</p>
+    <select id="color1"></select>
+    <select id="color2"></select>
+    <div class="controls">
+      <button id="btnConfirm">Confirm Setup</button>
+      <button id="btnBackMenu1">Back to Menu</button>
+    </div>
   </div>
 
-  <div id="stats" style="display:none;">
-    <h2>Statistics</h2>
-    <pre id="statsContent"></pre>
-    <button id="btnBackMenu2">Back to Menu</button>
-  </div>
-
-  <div id="game" style="display:none; flex:1; flex-direction:column;">
+  <div id="game" class="screen hidden">
     <div id="labels">
       <span id="leftLabel"></span>
       <span id="rightLabel"></span>
     </div>
-    <div id="colorCard"></div>
-    <button id="btnEndGame">Menu</button>
+
+    <div id="playArea">
+      <div id="leftSide" class="side"></div>
+      <div id="divider"></div>
+      <div id="rightSide" class="side"></div>
+      <div id="colorCard" aria-hidden="true"></div>
+    </div>
+
+    <div id="liveStats">Correct: <span id="liveCorrect">0</span> | Wrong: <span id="liveWrong">0</span></div>
+    <div class="controls">
+      <button id="btnEndGame">End Game (Save)</button>
+      <button id="btnMenuFromGame">Back to Menu</button>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <div id="stats" class="screen hidden">
+    <h2>All Past Games</h2>
+    <div id="historyList" class="history-list"></div>
+    <div class="controls">
+      <button id="btnClearHistory">Clear History</button>
+      <button id="btnBackMenu2">Back to Menu</button>
+    </div>
+  </div>
+
+<script src="script.js"></script>
 </body>
 </html>
