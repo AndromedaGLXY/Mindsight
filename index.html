@@ -8,52 +8,44 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div id="app">
+  <div id="menu">
+    <h1>MindSight: Colours</h1>
+    <button id="btnPlay">Play Game</button>
+    <button id="btnSetup">Setup Game</button>
+    <button id="btnStats">Statistics</button>
+  </div>
 
-    <!-- Main Menu -->
-    <div id="menu">
-      <h1>MindSight: Colours</h1>
-      <button id="btnPlay">Play Game</button>
-      <button id="btnSetup">Setup Game</button>
-      <button id="btnStats">Statistics</button>
+  <div id="setup" style="display:none;">
+    <h2>Setup Game</h2>
+    <p>Select 2 colours:</p>
+    <select id="color1">
+      <option>red</option><option>green</option><option>blue</option><option>yellow</option>
+      <option>orange</option><option>purple</option><option>pink</option><option>black</option>
+      <option>white</option><option>grey</option>
+    </select>
+    <select id="color2">
+      <option>green</option><option>red</option><option>blue</option><option>yellow</option>
+      <option>orange</option><option>purple</option><option>pink</option><option>black</option>
+      <option>white</option><option>grey</option>
+    </select>
+    <br><br>
+    <button id="btnConfirm">Confirm Setup</button>
+    <button id="btnBackMenu1">Back to Menu</button>
+  </div>
+
+  <div id="stats" style="display:none;">
+    <h2>Statistics</h2>
+    <pre id="statsContent"></pre>
+    <button id="btnBackMenu2">Back to Menu</button>
+  </div>
+
+  <div id="game" style="display:none; flex:1; flex-direction:column;">
+    <div id="labels">
+      <span id="leftLabel"></span>
+      <span id="rightLabel"></span>
     </div>
-
-    <!-- Setup Screen -->
-    <div id="setup" style="display:none;">
-      <h2>Setup Game</h2>
-      <p>Select 2 colours:</p>
-      <select id="color1">
-        <option>red</option><option>green</option><option>blue</option><option>yellow</option>
-        <option>orange</option><option>purple</option><option>pink</option><option>black</option>
-        <option>white</option><option>grey</option>
-      </select>
-      <select id="color2">
-        <option>green</option><option>red</option><option>blue</option><option>yellow</option>
-        <option>orange</option><option>purple</option><option>pink</option><option>black</option>
-        <option>white</option><option>grey</option>
-      </select>
-      <br><br>
-      <button id="btnConfirm">Confirm Setup</button>
-      <button id="btnBackMenu1">Back to Menu</button>
-    </div>
-
-    <!-- Statistics Screen -->
-    <div id="stats" style="display:none;">
-      <h2>Statistics</h2>
-      <pre id="statsContent"></pre>
-      <button id="btnBackMenu2">Back to Menu</button>
-    </div>
-
-    <!-- Game Screen -->
-    <div id="game" style="display:none; flex:1; flex-direction:column;">
-      <div id="labels">
-        <span id="leftLabel"></span>
-        <span id="rightLabel"></span>
-      </div>
-      <div id="colorCard"></div>
-      <button id="btnEndGame" style="position:absolute; bottom:10px; left:10px;">Menu</button>
-    </div>
-
+    <div id="colorCard"></div>
+    <button id="btnEndGame">Menu</button>
   </div>
 
   <script src="script.js"></script>
