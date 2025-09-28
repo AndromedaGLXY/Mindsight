@@ -33,10 +33,10 @@
     </div>
 
     <div id="playArea">
-      <div id="leftSide" class="side"></div>
+      <div id="colorCard"></div>
       <div id="divider"></div>
+      <div id="leftSide" class="side"></div>
       <div id="rightSide" class="side"></div>
-      <div id="colorCard" aria-hidden="true"></div>
     </div>
 
     <div id="liveStats">Correct: <span id="liveCorrect">0</span> | Wrong: <span id="liveWrong">0</span></div>
@@ -56,8 +56,6 @@
   </div>
 
 <script src="script.js"></script>
-</body>
-</html>
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
@@ -65,3 +63,5 @@
       .catch(err => console.error('SW registration failed:', err));
   }
 </script>
+</body>
+</html>
